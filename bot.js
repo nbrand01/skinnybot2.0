@@ -5,7 +5,7 @@ var botID = process.env.BOT_ID;
 var mcbergID = 63480248;
 
 
-if(request.text && request.sender_id == mcbergID && Math.random() < 1.00 && dyslexic){ 
+if(request.text && request.sender_id == mcbergID && Math.random() < 1.00{ 
 	this.res.writeHead(200);	
     postMessage("Shut up skinny boy!", request.group_id);
 	this.res.end();  
