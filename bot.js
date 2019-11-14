@@ -2,26 +2,14 @@ var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 
 var botID = process.env.BOT_ID;
+var mcbergID = 63480248;
 
-function respond() {
-  var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /gay\b/i;
 
-  if(request.text && botRegex.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("");
-    this.res.end();
-  } else {
-    console.log("don't care");
-    this.res.writeHead(200);
-    this.res.end();
+if(request.text && request.sender_id == mcbergID && Math.random() < 1.00 && dyslexic){ 
+	this.res.writeHead(200);	
+    postMessage("Shut up skinny boy!", request.group_id);
+	this.res.end();  
   }
-}
-
-function postMessage(message) {
-  var botResponse, options, body, botReq;
-
- 
 
   options = {
     hostname: 'api.groupme.com',
@@ -32,8 +20,6 @@ function postMessage(message) {
   body = {
     "bot_id" : botID,
     "text" : message,
-    "picture_url": "https://cdn.inprnt.com/thumbs/85/c1/85c150a47d90f5a1284caee0d042cf25.jpg"
-  };
  
 
   console.log('sending ' + botResponse + ' to ' + botID);
