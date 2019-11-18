@@ -4,12 +4,16 @@ var cool = require('cool-ascii-faces');
 var botID = process.env.BOT_ID;
 var mcbergID = 63480248;
 
+function respond(){
+	var request=JSON.parse(this.req.chunks[0]);
 
 if(request.text && request.sender_id == mcbergID && Math.random() < 1.00){
 	this.res.writeHead(200);	
     postMessage("Shut up skinny boy!", request.group_id);
 	this.res.end();  
   }
+}
+function postMessage(input){
 
   options = {
     hostname: 'api.groupme.com',
@@ -19,7 +23,8 @@ if(request.text && request.sender_id == mcbergID && Math.random() < 1.00){
 
   body = {
     "bot_id" : botID,
-    "text" : message,
+    "text" : input
+  };
  
 
   console.log('sending ' + botResponse + ' to ' + botID);
