@@ -9,7 +9,7 @@ function respond(){
 
 if(request.text && request.sender_id == mcbergID && Math.random() < 1.00){
 	this.res.writeHead(200);	
-    postMessage("Shut up skinny boy!", request.group_id);
+    postMessage("Shut up skinny boy!");
 	this.res.end();  
   }
 }
